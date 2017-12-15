@@ -1,10 +1,13 @@
 {
     "authLeftMenu": [{
         "label": "Graphics",
-        "item": "#graphics"
+        "item": "graphics"
+    }, {
+        "label": "Settings",
+        "item": "settings"
     }],
     "unauthLeftMenu": [{
         "label": "Settings",
-        "item": "#settings"
+        "item": "settings"
     }]
 }
