@@ -1,7 +1,10 @@
 {
     "authLeftMenu": [{
         "label": "Graphics",
-        "item": "graphics"
+        "item": "home"
+    }, {
+        "label": "Bot",
+        "item": "bot"
     }, {
         "label": "Settings",
         "item": "settings"

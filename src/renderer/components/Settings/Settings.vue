@@ -49,10 +49,6 @@ export default {
             return Vue.ls.get('wex-secret')
         },
         tryAccess : function() {
-            /*const api = new PublicAPI(this.getSecrets());
-            api.info().then((info)=>{
-                console.log(info);
-            });*/
             const secrets = this.getSecrets();
             const wexPublic = new WEX(secrets.api,secrets.key);
             this.attempt=false;
