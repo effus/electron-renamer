@@ -13,18 +13,18 @@
     <div class="row">
         <div class="col s12">
             <div>
-                <a class="btn blue" @click="showGraph('BTCUSD')">BTC/USD</a>
-                <a class="btn blue" @click="showGraph('BTCRUR')">BTC/RUR</a>
-                <a class="btn blue" @click="showGraph('BTCEUR')">BTC/EUR</a>
-                <a class="btn blue" @click="showGraph('LTCBTC')">LTC/BTC</a>
-                <a class="btn blue" @click="showGraph('LTCUSD')">LTC/USD</a>
-                <a class="btn blue" @click="showGraph('LTCRUR')">LTC/RUR</a>
-                <a class="btn blue" @click="showGraph('LTCEUR')">LTC/EUR</a>
-                <a class="btn blue" @click="showGraph('EURUSD')">EUR/USD</a>
-                <a class="btn blue" @click="showGraph('USDRUR')">USD/RUR</a>
-                <a class="btn blue" @click="showGraph('ETHBTC')">ETH/BTC</a>
-                <a class="btn blue" @click="showGraph('ETHUSD')">ETH/USD</a>
-                <a class="btn blue" @click="showGraph('ETHRUR')">ETH/RUR</a>
+                <a class="btn" v-bind:class="[current=='BTCUSD' ? 'red' : 'blue']" @click="showGraph('BTCUSD')">BTC/USD</a>
+                <a class="btn" v-bind:class="[current=='BTCRUR' ? 'red' : 'blue']" @click="showGraph('BTCRUR')">BTC/RUR</a>
+                <a class="btn" v-bind:class="[current=='BTCEUR' ? 'red' : 'blue']" @click="showGraph('BTCEUR')">BTC/EUR</a>
+                <a class="btn" v-bind:class="[current=='LTCBTC' ? 'red' : 'blue']" @click="showGraph('LTCBTC')">LTC/BTC</a>
+                <a class="btn" v-bind:class="[current=='LTCUSD' ? 'red' : 'blue']" @click="showGraph('LTCUSD')">LTC/USD</a>
+                <a class="btn" v-bind:class="[current=='LTCRUR' ? 'red' : 'blue']" @click="showGraph('LTCRUR')">LTC/RUR</a>
+                <a class="btn" v-bind:class="[current=='LTCEUR' ? 'red' : 'blue']" @click="showGraph('LTCEUR')">LTC/EUR</a>
+                <a class="btn" v-bind:class="[current=='EURUSD' ? 'red' : 'blue']" @click="showGraph('EURUSD')">EUR/USD</a>
+                <a class="btn" v-bind:class="[current=='USDRUR' ? 'red' : 'blue']" @click="showGraph('USDRUR')">USD/RUR</a>
+                <a class="btn" v-bind:class="[current=='ETHBTC' ? 'red' : 'blue']" @click="showGraph('ETHBTC')">ETH/BTC</a>
+                <a class="btn" v-bind:class="[current=='ETHUSD' ? 'red' : 'blue']" @click="showGraph('ETHUSD')">ETH/USD</a>
+                <a class="btn" v-bind:class="[current=='ETHRUR' ? 'red' : 'blue']" @click="showGraph('ETHRUR')">ETH/RUR</a>
             </div>
             <iframe style="width:100%; height: 500px;" :src="iframe"></iframe>
         </div>
@@ -63,12 +63,14 @@ export default {
     data: function() {
         return {
             iframe: Graphs.BTCUSD,
-            authbtn: true
+            authbtn: true,
+            current: 'BTCUSD'
         }
     },
     methods: {
         showGraph: function(pair) {
-            this.iframe = Graphs[pair]
+            this.iframe = Graphs[pair];
+            this.current = pair;
         },
         auth: function() {
             const secrets = Vue.ls.get('wex-secret');
@@ -88,7 +90,7 @@ export default {
 </script>
 
 <style>
-.btn.blue {
+.btn {
     padding: 0 .4em;
     height: 2em;
     line-height: 2.2em;
