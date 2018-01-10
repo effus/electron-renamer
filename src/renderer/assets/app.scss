@@ -1,9 +1,121 @@
+* {
+    box-sizing: border-box;
+}
 html,body {
-    height: 100%;
+    background: #000000;
+    margin: 0; padding:0;
+    font-family: 'Tahoma';
 }
 #app {
-    height: 100%;
-    .workplace {
-        height: inherit;
+    color: #cfcfca;
+    padding: 1%;
+    .dirlist {
+        background: #0c0c0c;
+        width: 50%;
+        padding: 1%;
+        font-size:12px;
+        vertical-align: top;
+    }
+    .renamed {
+        vertical-align: top;
+        background: #0c0c0c;
+        width: 50%;
+        padding: 1%;
+        font-size:12px;
+        color: #fffaaa;
+    }
+    button {
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        background-color: #363636;
+        background-image: -moz-linear-gradient(top, #444444, #222222);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#222222));
+        background-image: -webkit-linear-gradient(top, #444444, #222222);
+        background-image: -o-linear-gradient(top, #444444, #222222);
+        background-image: linear-gradient(to bottom, #444444, #222222);
+        background-repeat: repeat-x;
+        border-color: #222222 #222222 #000000;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        display: inline-block;
+        padding: 4px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        line-height: 20px;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 4px;
+        outline:none;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+        &:hover {
+            color: #ffffff;
+            background-color: #222222;
+            text-decoration: none;
+            background-position: 0 -15px;
+        }
+        &:active {
+            color: #ffffff;
+            background-color: #222222;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        &.red {
+            color:#fff;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);background-color: #da4f49;
+            background-repeat: repeat-x;
+            border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+            &:hover {
+                color: #ffffff;
+                background-color: #bd362f;
+            }
+        }
+    }
+    input[type="text"] {
+        padding: 5px 3px;
+        width: 500px;
+        background-color: #000;
+        border: 1px solid #143143;
+        color: #666;
+        font-family: 'Lucida Console';
+        outline:none;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        transition: border linear 0.2s, box-shadow linear 0.2s;
+        display: inline-block;
+        color: #555555;
+        vertical-align: middle;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        &:focus {
+            border: 1px solid #fff;
+            color: #fff;
+        }
+        &:active {
+            border: 1px solid #fff;
+        }
+    }
+    nav {
+        padding: 10px;
+        border-bottom: 1px solid #143143;
+        margin-bottom: 10px;
+    }
+    span.mark {
+        color: #006dcc;
+    }
+    .status {
+        padding: 3px 10px;
+        background-color: rgba(0, 136, 204, 0.45);
+        color: #fff;
+        font-size: 12px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        border-radius: 4px;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        margin-bottom: 15px;
+        float:left;
+        width: 400px;
+    }
+    td {
+        .item {
+            &:hover {
+                background-color: #000;
+            }
+        }
     }
 }
