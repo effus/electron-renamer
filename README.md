@@ -1,6 +1,4 @@
-# wex
-
-> wex client 
+# rename tool
 
 #### Build Setup
 
